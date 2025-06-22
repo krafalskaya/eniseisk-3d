@@ -386,6 +386,10 @@ function handleInteraction(event) {
 infoBox.style.display = "block";
 infoBox.innerText = text;
 
+// Сначала ставим плашку рядом с объектом, чтобы offsetWidth/offsetHeight правильно считались
+infoBox.style.left = `${x}px`;
+infoBox.style.top = `${y}px`;
+
 // Получаем размеры плашки
 const infoWidth = infoBox.offsetWidth;
 const infoHeight = infoBox.offsetHeight;
@@ -406,8 +410,10 @@ if (y + infoHeight > window.innerHeight) {
   finalY = 10;
 }
 
+// Применяем откорректированные координаты
 infoBox.style.left = `${finalX}px`;
 infoBox.style.top = `${finalY}px`;
+
 
 
     const name = selectedObject.userData.name || 'Без названия';
