@@ -385,15 +385,15 @@ function handleInteraction(event) {
 infoBox.style.display = "block";
 infoBox.innerText = text;
 
-// Ставим временно левый и верхний отступ в 0, чтобы плашка стала видимой и браузер смог посчитать размеры
-infoBox.style.left = '0px';
-infoBox.style.top = '0px';
+// Показываем плашку и наполняем текстом
+infoBox.style.display = "block";
+infoBox.innerText = text;
 
 // Получаем размеры плашки
 const infoWidth = infoBox.offsetWidth;
 const infoHeight = infoBox.offsetHeight;
 
-// Рассчитываем скорректированные координаты
+// Корректируем позицию по горизонтали
 let finalX = x;
 if (x + infoWidth > window.innerWidth) {
   finalX = window.innerWidth - infoWidth - 10;
@@ -401,6 +401,7 @@ if (x + infoWidth > window.innerWidth) {
   finalX = 10;
 }
 
+// Корректируем позицию по вертикали
 let finalY = y;
 if (y + infoHeight > window.innerHeight) {
   finalY = window.innerHeight - infoHeight - 10;
@@ -408,9 +409,9 @@ if (y + infoHeight > window.innerHeight) {
   finalY = 10;
 }
 
-// Применяем финальные координаты
 infoBox.style.left = `${finalX}px`;
 infoBox.style.top = `${finalY}px`;
+
 
 
 
