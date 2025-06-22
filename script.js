@@ -48,7 +48,7 @@ camera.lookAt(0, 0, 0);
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000033);
+    renderer.setClearColor(0x90c9dd);
     document.body.appendChild(renderer.domElement);
 
     // Добавляем свет
@@ -64,11 +64,11 @@ scene.add(directionalLight);
 
 
     // Добавляем плоскость
-    const planeGeometry = new THREE.PlaneGeometry(30, 25);
-    const planeMaterial = new THREE.MeshBasicMaterial({ color: 0x4f463f, side: THREE.DoubleSide });
-    const plane = new THREE.Mesh(planeGeometry, planeMaterial);
-    plane.rotation.x = -Math.PI / 2;
-    scene.add(plane);
+    // const planeGeometry = new THREE.PlaneGeometry(30, 25);
+    // const planeMaterial = new THREE.MeshBasicMaterial({ color: 0x4f463f, side: THREE.DoubleSide });
+    // const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    // plane.rotation.x = -Math.PI / 2;
+    // scene.add(plane);
 
     // Создаем сетку 10x10
     // const gridHelper = new THREE.GridHelper(100, 10, 0xffff00, 0xffff00);  // 10 — размер сетки, 10 — количество делений
@@ -106,11 +106,26 @@ const assignUserData = (object, name) => {
 };
 
 loader.load(
+  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/ground.glb',
+  function (gltf) {
+    const model = borodkin1 = gltf.scene;
+    assignUserData(model, 'ground');
+    model.position.set(0, -5.86963, 0);
+    scene.add(model);
+model.traverse(child => {
+      if (child.isMesh) {
+        child.material.roughness = 1;
+    child.material.metalness = 0;
+      }
+    });  }
+);
+
+loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/borodkin1.glb',
   function (gltf) {
     const model = borodkin1 = gltf.scene;
     assignUserData(model, 'Borodkin');
-    model.position.set(-12, 0, -6);
+    model.position.set(-12, 0, -5);
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
@@ -138,7 +153,7 @@ loader.load(
   function (gltf) {
     const model = gymnasiumFem = gltf.scene;
     assignUserData(model, 'GymnasiumFem');
-    model.position.set(-7, 0, -4);
+    model.position.set(-7, 0, -3);
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
@@ -166,7 +181,7 @@ loader.load(
   function (gltf) {
     const model = kytmanovMuseum = gltf.scene;
     assignUserData(model, 'KytmanovMuseum');
-    model.position.set(-6, 0, 0);
+    model.position.set(-6, 0, 1);
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
@@ -280,7 +295,7 @@ loader.load(
   function (gltf) {
     const model = troytskaya = gltf.scene;
     assignUserData(model, 'Troytskaya');
-    model.position.set(0, 0, -10);
+    model.position.set(-2, 0, -9);
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
