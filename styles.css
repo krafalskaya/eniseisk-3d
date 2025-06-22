@@ -1,0 +1,17 @@
+#popup {
+    #info-box {
+        display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  max-width: 280px;
+  word-wrap: break-word;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  user-select: none;
+      }
+}

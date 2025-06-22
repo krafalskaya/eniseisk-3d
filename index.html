@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Карта Енисейска</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Здесь подключается CSS -->
+  
+  <!-- Импорт-карта для модулей -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.module.js"
+    }
+  }
+  </script>
+  
+</head>
+<body>
+  <div id="info-box" style="
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  max-width: 280px;
+  word-wrap: break-word;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  ">
+  Здесь будет информация об объекте
+</div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
