@@ -5,23 +5,25 @@ import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.155.0/examples/
 
 window.onload = () => {
 const infoTexts = {
-  "Borodkin": "Информация об усадьбе Бородукин...",
-  "Typography": "Информация о типографии...",
-  "GymnasiumFem": "Информация о женской гимназии...",
-  "GymnasiumMale": "Информация о мужской гимназии...",
-  "KytmanovMuseum": "Информация о музее Кытманова...",
-  "Spasskiy": "Информация о Спасском соборе...",
-  "Uspenskiy": "Информация об Успенском соборе...",
-  "Voyevoda": "Информация о доме воеводы...",
-  "Zakhariy": "Информация о Захарии...",
-  "Vostrotin": "Информация о Воростроте...",
-  "Voskresenskaya": "Информация о Воскресенской церкви...",
-  "Urushev": "Информация об Урушеве...",
-  "Troytskaya": "Информация о Троицкой церкви...",
-  "Khamitkov": "Информация об усадьбе Хаметкова...",
-  "Iverskiy": "Информация об Иверской церкви...",
-  "Bogoyavlenskiy": "Информация о Богоявленском соборе..."
+  "Spasskiy": "Это главный храм Спасского монастыря — первого мужского монастыря в Сибири. Построен в XVIII веке, он стал образцом сибирского барокко. Его строгий и величественный облик подчёркивает важность монастыря в духовной жизни города.",
+  "Zakhariy": "Небольшая каменная церковь, построенная в конце XVIII века. Она посвящена святым Захарии и Елисавете — родителям Иоанна Предтечи. Здание отличается гармоничными пропорциями и архитектурной сдержанностью.",
+  "Uspenskiy": "Один из старейших храмов Енисейска, построенный в стиле сибирского барокко. Его главный престол освящён в честь Успения Богородицы. В архитектуре сочетаются пышность декора и строгость форм.",
+  "Troytskaya": "Эта церковь была частью Троицкого прихода, важного для жителей города. Её внешний вид отражает черты народного зодчества и сибирской каменной архитектуры. Здание отличается выразительным силуэтом.",
+  "Bogoyavlenskiy": "Один из крупнейших и красивейших храмов города, построенный в начале XIX века. Его белокаменное здание украшено колоннами и пилястрами. Собор играл важную роль в религиозной и культурной жизни Енисейска.",
+  "Iverskiy": "Монастырь был основан в XIX веке как обитель для женщин, выбравших путь служения Богу. Здесь находилась церковь и жилые корпуса. Здание отличается спокойной, уравновешенной архитектурой.",
+  "Voskresenskaya": "Эта церковь занимает особое место в архитектурном ансамбле города. Её постройка связана с возрождением религиозной жизни в Енисейске в XVIII веке. Здание сочетает строгость форм с выразительными деталями.",
+
+  "GymnasiumMale": "Одна из первых учебных организаций города, открытая в XIX веке. Здесь обучались юноши по классической программе, включающей латынь, математику и историю. Здание гимназии выполнено в стиле классицизма.",
+  "GymnasiumFem": "Эта школа давала образование девушкам из состоятельных семей. Учебная программа включала языки, музыку, рукоделие и основы наук. Здание отличается аккуратной симметричной архитектурой.",
+  "Typography": "В этом здании располагалась типография, где печатали книги и газеты для Енисейска и всей губернии. Типография сыграла важную роль в просвещении и распространении знаний. Архитектура здания проста и функциональна.",
+  "Khamitkov": "Дом купца Хамиткова — яркий пример городской усадьбы XIX века. Здесь жили и вели хозяйство представители состоятельного сословия. Здание украшено деревянной резьбой и сохранило элементы первоначального декора.",
+  "Urushev": "Каменный дом, принадлежавший купеческой семье Урушевых. Построенный в XIX веке, он служил и жилым помещением, и торговым местом. Фасад здания украшен элементами кирпичной архитектуры.",
+  "Borodkin": "Усадьба купца Бородкина — характерный пример купеческой застройки Енисейска. Дом сочетает жилые и хозяйственные функции. Его архитектура отражает вкусы зажиточных горожан XIX века.",
+  "Vostrotin": "Этот дом принадлежал известному горожанину Востротину. Здание интересно тем, как сочетаются жилые и складские функции. Оно хорошо передаёт атмосферу деловой части Енисейска XIX века.",
+  "Voyevoda": "Один из самых старых домов города, где жил и работал царский представитель — воевода. Здание выполнено из дерева и относится к раннему этапу застройки Енисейска. Оно имеет большое историческое значение.",
+  "KytmanovMuseum": "Ранее — усадьба купца Кытманова, а теперь — главный музей города. Здесь собраны предметы быта, документы, картины, рассказывающие об истории Енисейска. Архитектура здания сочетает черты классицизма и сибирского купеческого дома."
 };
+
 
 
     // Создаем сцену, камеру и рендерер
@@ -42,7 +44,7 @@ if (isMobile()) {
   camera.position.set(-10, 10, 10);
 }
 camera.lookAt(0, 0, 0);
-    
+
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -107,7 +109,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/borodkin1.glb',
   function (gltf) {
     const model = borodkin1 = gltf.scene;
-    assignUserData(model, 'Бородкин');
+    assignUserData(model, 'Borodkin');
     model.position.set(-12, 0, -6);
     scene.add(model);
 model.traverse(child => {
@@ -121,7 +123,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/Typography.glb',
   function (gltf) {
     const model = typography = gltf.scene;
-    assignUserData(model, 'Типография');
+    assignUserData(model, 'Typography');
     model.position.set(-5, 0, 5);
     scene.add(model);
 model.traverse(child => {
@@ -135,7 +137,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/gymnasiumfem.glb',
   function (gltf) {
     const model = gymnasiumFem = gltf.scene;
-    assignUserData(model, 'Гимназия (женская)');
+    assignUserData(model, 'GymnasiumFem');
     model.position.set(-7, 0, -4);
     scene.add(model);
 model.traverse(child => {
@@ -149,7 +151,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/gymnaziummale.glb',
   function (gltf) {
     const model = gymnasiumMale = gltf.scene;
-    assignUserData(model, 'Гимназия (мужская)');
+    assignUserData(model, 'GymnasiumMale');
     model.position.set(0, 0, 0);
     scene.add(model);
 model.traverse(child => {
@@ -163,7 +165,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/kytmanovmuseum.glb',
   function (gltf) {
     const model = kytmanovMuseum = gltf.scene;
-    assignUserData(model, 'Музей Кытманова');
+    assignUserData(model, 'KytmanovMuseum');
     model.position.set(-6, 0, 0);
     scene.add(model);
 model.traverse(child => {
@@ -177,7 +179,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/spasskiy2.glb',
   function (gltf) {
     const model = spasskiy2 = gltf.scene;
-    assignUserData(model, 'Спасский');
+    assignUserData(model, 'Spasskiy');
     model.position.set(10, 0, -3);
     scene.add(model);
 model.traverse(child => {
@@ -191,7 +193,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/uspenskiy.glb',
   function (gltf) {
     const model = uspenskiy = gltf.scene;
-    assignUserData(model, 'Успенский');
+    assignUserData(model, 'Uspenskiy');
     model.position.set(12, 0, 4);
     model.rotation.y = Math.PI;
     scene.add(model);
@@ -206,7 +208,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/voyevoda.glb',
   function (gltf) {
     const model = voyevoda = gltf.scene;
-    assignUserData(model, 'Воевода');
+    assignUserData(model, 'Voyevoda');
     model.position.set(7, 0, 4);
     scene.add(model);
 model.traverse(child => {
@@ -220,7 +222,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/zakhariy.glb',
   function (gltf) {
     const model = zakhariy = gltf.scene;
-    assignUserData(model, 'Захарий');
+    assignUserData(model, 'Zakhariy');
     model.position.set(6, 0, -2);
     model.rotation.y = -Math.PI / 2;
     scene.add(model);
@@ -235,7 +237,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/vostrotin.glb',
   function (gltf) {
     const model = vostrotin = gltf.scene;
-    assignUserData(model, 'Востротин');
+    assignUserData(model, 'Vostrotin');
     model.position.set(11, 0, 7);
     scene.add(model);
 model.traverse(child => {
@@ -249,7 +251,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/voskresenskaya.glb',
   function (gltf) {
     const model = voskresenskaya = gltf.scene;
-    assignUserData(model, 'Воскресенская');
+    assignUserData(model, 'Voskresenskaya');
     model.position.set(-11, 0, 2);
     scene.add(model);
 model.traverse(child => {
@@ -263,7 +265,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/urushev.glb',
   function (gltf) {
     const model = urushev = gltf.scene;
-    assignUserData(model, 'Урушев');
+    assignUserData(model, 'Urushev');
     model.position.set(4, 0, -6);
     scene.add(model);
 model.traverse(child => {
@@ -277,7 +279,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/troytskaya.glb',
   function (gltf) {
     const model = troytskaya = gltf.scene;
-    assignUserData(model, 'Троицкая');
+    assignUserData(model, 'Troytskaya');
     model.position.set(0, 0, -10);
     scene.add(model);
 model.traverse(child => {
@@ -291,7 +293,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/khamitkov.glb',
   function (gltf) {
     const model = khamitkov = gltf.scene;
-    assignUserData(model, 'Хаметков');
+    assignUserData(model, 'Khamitkov');
     model.position.set(0, 0, -6);
     scene.add(model);
 model.traverse(child => {
@@ -305,7 +307,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/iverskiy.glb',
   function (gltf) {
     const model = iverskiy = gltf.scene;
-    assignUserData(model, 'Иверский');
+    assignUserData(model, 'Iverskiy');
     model.position.set(-10, 0, 5);
     scene.add(model);
 model.traverse(child => {
@@ -319,7 +321,7 @@ loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/bogoyavlenskiy2.glb',
   function (gltf) {
     const model = bogoyavlenskiy2 = gltf.scene;
-    assignUserData(model, 'Богоявленский');
+    assignUserData(model, 'Bogoyavlenskiy');
     model.position.set(3, 0, 6);
     scene.add(model);
      model.traverse(child => {
@@ -381,59 +383,56 @@ function handleInteraction(event) {
   const intersects = raycaster.intersectObjects(clickableObjects);
 
   if (intersects.length > 0) {
-    const rawObject = intersects[0].object;
+  const rawObject = intersects[0].object;
 
-    function findNamedParent(object) {
-      while (object && !object.userData.name && object.parent) {
-        object = object.parent;
-      }
-      return object;
+  function findNamedParent(object) {
+    while (object && !object.userData.name && object.parent) {
+      object = object.parent;
     }
-
-    const selectedObject = findNamedParent(rawObject);
-    const objectPosition = new THREE.Vector3();
-    selectedObject.getWorldPosition(objectPosition);
-    const screenPosition = objectPosition.project(camera);
-    const x = (screenPosition.x * 0.5 + 0.5) * window.innerWidth;
-    const y = (1 - (screenPosition.y * 0.5 + 0.5)) * window.innerHeight;
-infoBox.style.display = "block";
-infoBox.innerText = text;
-
-// Показываем плашку и наполняем текстом
-infoBox.style.display = "block";
-infoBox.innerText = text;
-
-// Получаем размеры плашки
-const infoWidth = infoBox.offsetWidth;
-const infoHeight = infoBox.offsetHeight;
-
-// Корректируем позицию по горизонтали
-let finalX = x;
-if (x + infoWidth > window.innerWidth) {
-  finalX = window.innerWidth - infoWidth - 10;
-} else if (x < 10) {
-  finalX = 10;
-}
-
-// Корректируем позицию по вертикали
-let finalY = y;
-if (y + infoHeight > window.innerHeight) {
-  finalY = window.innerHeight - infoHeight - 10;
-} else if (y < 10) {
-  finalY = 10;
-}
-
-infoBox.style.left = `${finalX}px`;
-infoBox.style.top = `${finalY}px`;
-
-
-
-    const name = selectedObject.userData.name || 'Без названия';
-    const text = infoTexts[name] || `Информация об объекте: ${name}`;
-    infoBox.innerText = text;
-  } else {
-    infoBox.style.display = "none";
+    return object;
   }
+
+  const selectedObject = findNamedParent(rawObject);
+
+  const name = selectedObject.userData.name || 'Без названия';
+  const text = infoTexts[name] || `Информация об объекте: ${name}`;
+
+  const objectPosition = new THREE.Vector3();
+  selectedObject.getWorldPosition(objectPosition);
+  const screenPosition = objectPosition.project(camera);
+  const x = (screenPosition.x * 0.5 + 0.5) * window.innerWidth;
+  const y = (1 - (screenPosition.y * 0.5 + 0.5)) * window.innerHeight;
+
+  infoBox.style.display = "block";
+  infoBox.innerText = text;
+
+  // Получаем размеры плашки
+  const infoWidth = infoBox.offsetWidth;
+  const infoHeight = infoBox.offsetHeight;
+
+  // Корректируем позицию по горизонтали
+  let finalX = x;
+  if (x + infoWidth > window.innerWidth) {
+    finalX = window.innerWidth - infoWidth - 10;
+  } else if (x < 10) {
+    finalX = 10;
+  }
+
+  // Корректируем позицию по вертикали
+  let finalY = y;
+  if (y + infoHeight > window.innerHeight) {
+    finalY = window.innerHeight - infoHeight - 10;
+  } else if (y < 10) {
+    finalY = 10;
+  }
+
+  infoBox.style.left = `${finalX}px`;
+  infoBox.style.top = `${finalY}px`;
+
+} else {
+  infoBox.style.display = "none";
+}
+
 }
 
 // Подключаем обработчики для мыши и касаний
