@@ -387,6 +387,25 @@ function handleInteraction(event) {
     infoBox.style.left = `${x}px`;
     infoBox.style.top = `${y}px`;
 
+    // Получаем размеры плашки
+const infoWidth = infoBox.offsetWidth;
+const infoHeight = infoBox.offsetHeight;
+
+// Корректируем позицию по горизонтали
+if (x + infoWidth > window.innerWidth) {
+  infoBox.style.left = `${window.innerWidth - infoWidth - 10}px`; // отступ 10px
+} else if (x < 0) {
+  infoBox.style.left = `10px`;
+}
+
+// Корректируем позицию по вертикали
+if (y + infoHeight > window.innerHeight) {
+  infoBox.style.top = `${window.innerHeight - infoHeight - 10}px`;
+} else if (y < 0) {
+  infoBox.style.top = `10px`;
+}
+
+
     const name = selectedObject.userData.name || 'Без названия';
     const text = infoTexts[name] || `Информация об объекте: ${name}`;
     infoBox.innerText = text;
