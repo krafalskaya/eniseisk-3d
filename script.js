@@ -348,7 +348,15 @@ function handleInteraction(event) {
 
 // Подключаем обработчики для мыши и касаний
 window.addEventListener("click", handleInteraction);
-window.addEventListener("touchstart", handleInteraction);
+window.addEventListener("touchstart", (event) => {
+  // Преобразуем touch в event-like объект
+  const touch = event.touches[0];
+  const fakeMouseEvent = new MouseEvent("click", {
+    clientX: touch.clientX,
+    clientY: touch.clientY
+  });
+  window.dispatchEvent(fakeMouseEvent);
+}, { passive: true });
 
 
 
