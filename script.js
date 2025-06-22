@@ -382,19 +382,18 @@ function handleInteraction(event) {
     const screenPosition = objectPosition.project(camera);
     const x = (screenPosition.x * 0.5 + 0.5) * window.innerWidth;
     const y = (1 - (screenPosition.y * 0.5 + 0.5)) * window.innerHeight;
-// Показываем плашку и наполняем текстом
 infoBox.style.display = "block";
 infoBox.innerText = text;
 
-// Сначала ставим плашку рядом с объектом, чтобы offsetWidth/offsetHeight правильно считались
-infoBox.style.left = `${x}px`;
-infoBox.style.top = `${y}px`;
+// Ставим временно левый и верхний отступ в 0, чтобы плашка стала видимой и браузер смог посчитать размеры
+infoBox.style.left = '0px';
+infoBox.style.top = '0px';
 
 // Получаем размеры плашки
 const infoWidth = infoBox.offsetWidth;
 const infoHeight = infoBox.offsetHeight;
 
-// Корректируем позицию по горизонтали
+// Рассчитываем скорректированные координаты
 let finalX = x;
 if (x + infoWidth > window.innerWidth) {
   finalX = window.innerWidth - infoWidth - 10;
@@ -402,7 +401,6 @@ if (x + infoWidth > window.innerWidth) {
   finalX = 10;
 }
 
-// Корректируем позицию по вертикали
 let finalY = y;
 if (y + infoHeight > window.innerHeight) {
   finalY = window.innerHeight - infoHeight - 10;
@@ -410,7 +408,7 @@ if (y + infoHeight > window.innerHeight) {
   finalY = 10;
 }
 
-// Применяем откорректированные координаты
+// Применяем финальные координаты
 infoBox.style.left = `${finalX}px`;
 infoBox.style.top = `${finalY}px`;
 
