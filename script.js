@@ -96,8 +96,11 @@ loader.load(
     assignUserData(model, 'Бородкин');
     model.position.set(-12, 0, -6);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -107,8 +110,11 @@ loader.load(
     assignUserData(model, 'Типография');
     model.position.set(-5, 0, 5);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -118,8 +124,11 @@ loader.load(
     assignUserData(model, 'Гимназия (женская)');
     model.position.set(-7, 0, -4);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -129,8 +138,11 @@ loader.load(
     assignUserData(model, 'Гимназия (мужская)');
     model.position.set(0, 0, 0);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -140,8 +152,11 @@ loader.load(
     assignUserData(model, 'Музей Кытманова');
     model.position.set(-6, 0, 0);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -151,8 +166,11 @@ loader.load(
     assignUserData(model, 'Спасский');
     model.position.set(10, 0, -3);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -163,8 +181,11 @@ loader.load(
     model.position.set(12, 0, 4);
     model.rotation.y = Math.PI;
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -174,8 +195,11 @@ loader.load(
     assignUserData(model, 'Воевода');
     model.position.set(7, 0, 4);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -186,8 +210,11 @@ loader.load(
     model.position.set(6, 0, -2);
     model.rotation.y = -Math.PI / 2;
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -197,8 +224,11 @@ loader.load(
     assignUserData(model, 'Востротин');
     model.position.set(11, 0, 7);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -208,8 +238,11 @@ loader.load(
     assignUserData(model, 'Воскресенская');
     model.position.set(-11, 0, 2);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -219,8 +252,11 @@ loader.load(
     assignUserData(model, 'Урушев');
     model.position.set(4, 0, -6);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -230,8 +266,11 @@ loader.load(
     assignUserData(model, 'Троицкая');
     model.position.set(0, 0, -10);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -241,8 +280,11 @@ loader.load(
     assignUserData(model, 'Хаметков');
     model.position.set(0, 0, -6);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -252,8 +294,11 @@ loader.load(
     assignUserData(model, 'Иверский');
     model.position.set(-10, 0, 5);
     scene.add(model);
-    clickableObjects.push(model);
-  }
+model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });  }
 );
 
 loader.load(
@@ -263,7 +308,11 @@ loader.load(
     assignUserData(model, 'Богоявленский');
     model.position.set(3, 0, 6);
     scene.add(model);
-    clickableObjects.push(model);
+     model.traverse(child => {
+      if (child.isMesh) {
+        clickableObjects.push(child);
+      }
+    });
   }
 );
 
