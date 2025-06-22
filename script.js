@@ -26,9 +26,23 @@ const infoTexts = {
 
     // Создаем сцену, камеру и рендерер
     const scene = new THREE.Scene();
+    
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(-10, 10, 10);
-    camera.lookAt(0, 0, 0);
+    // Функция для проверки, мобильное ли устройство
+function isMobile() {
+  return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+}
+
+// В месте установки камеры
+if (isMobile()) {
+  // Настраиваем камеру для мобильных — ниже и дальше
+  camera.position.set(-15, 5, 20); // Пример: смещаем вниз (меньше по Y) и дальше (больше по Z)
+} else {
+  // Для ПК — стандартная позиция
+  camera.position.set(-10, 10, 10);
+}
+camera.lookAt(0, 0, 0);
+    
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -411,7 +425,6 @@ if (y + infoHeight > window.innerHeight) {
 
 infoBox.style.left = `${finalX}px`;
 infoBox.style.top = `${finalY}px`;
-
 
 
 
