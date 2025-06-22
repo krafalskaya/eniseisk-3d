@@ -382,28 +382,32 @@ function handleInteraction(event) {
     const screenPosition = objectPosition.project(camera);
     const x = (screenPosition.x * 0.5 + 0.5) * window.innerWidth;
     const y = (1 - (screenPosition.y * 0.5 + 0.5)) * window.innerHeight;
+// Показываем плашку и наполняем текстом
+infoBox.style.display = "block";
+infoBox.innerText = text;
 
-    infoBox.style.display = "block";
-    infoBox.style.left = `${x}px`;
-    infoBox.style.top = `${y}px`;
-
-    // Получаем размеры плашки
+// Получаем размеры плашки
 const infoWidth = infoBox.offsetWidth;
 const infoHeight = infoBox.offsetHeight;
 
 // Корректируем позицию по горизонтали
+let finalX = x;
 if (x + infoWidth > window.innerWidth) {
-  infoBox.style.left = `${window.innerWidth - infoWidth - 10}px`; // отступ 10px
-} else if (x < 0) {
-  infoBox.style.left = `10px`;
+  finalX = window.innerWidth - infoWidth - 10;
+} else if (x < 10) {
+  finalX = 10;
 }
 
 // Корректируем позицию по вертикали
+let finalY = y;
 if (y + infoHeight > window.innerHeight) {
-  infoBox.style.top = `${window.innerHeight - infoHeight - 10}px`;
-} else if (y < 0) {
-  infoBox.style.top = `10px`;
+  finalY = window.innerHeight - infoHeight - 10;
+} else if (y < 10) {
+  finalY = 10;
 }
+
+infoBox.style.left = `${finalX}px`;
+infoBox.style.top = `${finalY}px`;
 
 
     const name = selectedObject.userData.name || 'Без названия';
