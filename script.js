@@ -5,7 +5,7 @@ import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.155.0/examples/
 
 window.onload = () => {
 const infoTexts = {
-  "Spasskiy": "Собор Преображения Господня - это главный храм Спасо-Преображенского монастыря — первого мужского монастыря в Сибири. Построен в XVIII веке, он стал образцом сибирского барокко. Его строгий и величественный облик подчёркивает важность монастыря в духовной жизни города.",
+  "Spasskiy": "Собор Преображения Господня - это главный храм Спасо-Преображенского монастыря — первого мужского монастыря в Сибири. Построенный в XVIII веке, он стал образцом сибирского барокко. Его строгий и величественный облик подчёркивает важность монастыря в духовной жизни города.",
   "Zakhariy": "Небольшая каменная церковь, построенная в конце XVIII века. Здание отличается гармоничными пропорциями и архитектурной сдержанностью.",
   "Uspenskiy": "Один из старейших храмов Енисейска, построенный в стиле сибирского барокко - Собор Успения Пресвятой Богородицы. Его главный престол освящён в честь Успения Богородицы. В архитектуре сочетаются пышность декора и строгость форм.",
   "Troytskaya": "Церковь Троицы Живоначальной была частью Троицкого прихода, важного для жителей города. Её внешний вид отражает черты народного зодчества и сибирской каменной архитектуры.",
@@ -196,6 +196,21 @@ loader.load(
   function (gltf) {
     const model = borodkin1 = gltf.scene;
     assignUserData(model, 'ground');
+    model.position.set(8, 0, 8);
+    scene.add(model);
+model.traverse(child => {
+      if (child.isMesh) {
+        child.material.roughness = 1;
+    child.material.metalness = 0;
+      }
+    });  }
+);
+
+loader.load(
+  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest3.glb',
+  function (gltf) {
+    const model = borodkin1 = gltf.scene;
+    assignUserData(model, 'ground');
     model.position.set(-13, 0, -4);
     scene.add(model);
 model.traverse(child => {
@@ -260,6 +275,22 @@ loader.load(
     const model = borodkin1 = gltf.scene;
     assignUserData(model, 'ground');
     model.position.set(8, 0, 2);
+    scene.add(model);
+model.traverse(child => {
+      if (child.isMesh) {
+        child.material.roughness = 1;
+    child.material.metalness = 0;
+      }
+    });  }
+);
+
+loader.load(
+  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
+  function (gltf) {
+    const model = borodkin1 = gltf.scene;
+    assignUserData(model, 'ground');
+    model.position.set(8, 0, 6);
+    model.rotation.y = Math.PI / 2;
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
@@ -387,7 +418,7 @@ child.receiveShadow = true;
 );
 
 loader.load(
-  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/spasskiy2.glb',
+  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/spasskiy3.glb',
   function (gltf) {
     const model = spasskiy2 = gltf.scene;
     assignUserData(model, 'Spasskiy');
