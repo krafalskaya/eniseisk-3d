@@ -48,16 +48,25 @@ camera.lookAt(0, 0, 0);
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0xffb6b9);
+    renderer.setClearColor(0xF0DEC8);
+    renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap; // для мягких теней (опционально)
+
     document.body.appendChild(renderer.domElement);
 
     // Добавляем свет
     // Мягкий рассеянный свет
-const ambientLight = new THREE.AmbientLight(0xfff4e6, 3); // тёплый и не слишком яркий
+const ambientLight = new THREE.AmbientLight(0xfff4e6, 0.7); // тёплый и не слишком яркий
 scene.add(ambientLight);
 
+const pointLight = new THREE.PointLight(0xFF8C69, 1, 100); // цвет, интенсивность, дальность света
+pointLight.position.set(20, 5, 10); // расположение источника света в сцене
+pointLight.castShadow = true;
+scene.add(pointLight);
+
+
 // Направленный "солнечный" свет
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1.2); // ярче и четче
+const directionalLight = new THREE.DirectionalLight(0xffffff, 3); // ярче и четче
 directionalLight.position.set(50, 100, 50);
 directionalLight.castShadow = true;
 scene.add(directionalLight);
@@ -132,6 +141,7 @@ model.traverse(child => {
       if (child.isMesh) {
         child.material.roughness = 1;
     child.material.metalness = 0;
+    child.receiveShadow = true;
       }
     });  }
 );
@@ -300,6 +310,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -314,6 +327,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -328,6 +344,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -342,6 +361,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -356,6 +378,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -370,6 +395,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -385,6 +413,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -399,6 +430,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -414,6 +448,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -428,6 +465,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -442,6 +482,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -456,6 +499,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -470,6 +516,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -484,6 +533,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -498,6 +550,9 @@ loader.load(
     scene.add(model);
 model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });  }
@@ -512,6 +567,9 @@ loader.load(
     scene.add(model);
      model.traverse(child => {
       if (child.isMesh) {
+        child.castShadow = true;
+child.receiveShadow = true;
+
         clickableObjects.push(child);
       }
     });
