@@ -105,21 +105,21 @@ const assignUserData = (object, name) => {
   });
 };
 
-loader.load(
-  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest1.glb',
-  function (gltf) {
-    const model = borodkin1 = gltf.scene;
-    assignUserData(model, 'ground');
-    model.position.set(0, 0, 2);
-    model.rotation.y = Math.PI / 2;
-    scene.add(model);
-model.traverse(child => {
-      if (child.isMesh) {
-        child.material.roughness = 1;
-    child.material.metalness = 0;
-      }
-    });  }
-);
+// loader.load(
+//   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest1.glb',
+//   function (gltf) {
+//     const model = borodkin1 = gltf.scene;
+//     assignUserData(model, 'ground');
+//     model.position.set(0, 0, 2);
+//     model.rotation.y = Math.PI / 2;
+//     scene.add(model);
+// model.traverse(child => {
+//       if (child.isMesh) {
+//         child.material.roughness = 1;
+//     child.material.metalness = 0;
+//       }
+//     });  }
+// );
 
 loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/ground2.glb',
@@ -136,160 +136,160 @@ model.traverse(child => {
     });  }
 );
 
-loader.load(
-  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
-  function (gltf) {
-    const model = borodkin1 = gltf.scene;
-    assignUserData(model, 'ground');
-    model.position.set(-13, 0, 3);
-    scene.add(model);
-model.traverse(child => {
-      if (child.isMesh) {
-        child.material.roughness = 1;
-    child.material.metalness = 0;
-      }
-    });  }
-);
+// loader.load(
+//   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
+//   function (gltf) {
+//     const model = borodkin1 = gltf.scene;
+//     assignUserData(model, 'ground');
+//     model.position.set(-13, 0, 3);
+//     scene.add(model);
+// model.traverse(child => {
+//       if (child.isMesh) {
+//         child.material.roughness = 1;
+//     child.material.metalness = 0;
+//       }
+//     });  }
+// );
 
-loader.load(
-  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
-  function (gltf) {
-    const model = borodkin1 = gltf.scene;
-    assignUserData(model, 'ground');
-    model.position.set(-12.5, 0, 5);
-    scene.add(model);
-model.traverse(child => {
-      if (child.isMesh) {
-        child.material.roughness = 1;
-    child.material.metalness = 0;
-      }
-    });  }
-);
+// loader.load(
+//   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
+//   function (gltf) {
+//     const model = borodkin1 = gltf.scene;
+//     assignUserData(model, 'ground');
+//     model.position.set(-12.5, 0, 5);
+//     scene.add(model);
+// model.traverse(child => {
+//       if (child.isMesh) {
+//         child.material.roughness = 1;
+//     child.material.metalness = 0;
+//       }
+//     });  }
+// );
 
-loader.load(
-  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest3.glb',
-  function (gltf) {
-    const model = borodkin1 = gltf.scene;
-    assignUserData(model, 'ground');
-    model.position.set(-13.5, 0, -5);
-    scene.add(model);
-model.traverse(child => {
-      if (child.isMesh) {
-        child.material.roughness = 1;
-    child.material.metalness = 0;
-      }
-    });  }
-);
+// loader.load(
+//   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest3.glb',
+//   function (gltf) {
+//     const model = borodkin1 = gltf.scene;
+//     assignUserData(model, 'ground');
+//     model.position.set(-13.5, 0, -5);
+//     scene.add(model);
+// model.traverse(child => {
+//       if (child.isMesh) {
+//         child.material.roughness = 1;
+//     child.material.metalness = 0;
+//       }
+//     });  }
+// );
 
-loader.load(
-  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest3.glb',
-  function (gltf) {
-    const model = borodkin1 = gltf.scene;
-    assignUserData(model, 'ground');
-    model.position.set(-13, 0, -4);
-    scene.add(model);
-model.traverse(child => {
-      if (child.isMesh) {
-        child.material.roughness = 1;
-    child.material.metalness = 0;
-      }
-    });  }
-);
+// loader.load(
+//   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest3.glb',
+//   function (gltf) {
+//     const model = borodkin1 = gltf.scene;
+//     assignUserData(model, 'ground');
+//     model.position.set(-13, 0, -4);
+//     scene.add(model);
+// model.traverse(child => {
+//       if (child.isMesh) {
+//         child.material.roughness = 1;
+//     child.material.metalness = 0;
+//       }
+//     });  }
+// );
 
-loader.load(
-  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
-  function (gltf) {
-    const model = borodkin1 = gltf.scene;
-    assignUserData(model, 'ground');
-    model.position.set(-9, 0, -1);
-    model.rotation.y = Math.PI / 2;
-    scene.add(model);
-model.traverse(child => {
-      if (child.isMesh) {
-        child.material.roughness = 1;
-    child.material.metalness = 0;
-      }
-    });  }
-);
+// loader.load(
+//   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
+//   function (gltf) {
+//     const model = borodkin1 = gltf.scene;
+//     assignUserData(model, 'ground');
+//     model.position.set(-9, 0, -1);
+//     model.rotation.y = Math.PI / 2;
+//     scene.add(model);
+// model.traverse(child => {
+//       if (child.isMesh) {
+//         child.material.roughness = 1;
+//     child.material.metalness = 0;
+//       }
+//     });  }
+// );
 
-loader.load(
-  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
-  function (gltf) {
-    const model = borodkin1 = gltf.scene;
-    assignUserData(model, 'ground');
-    model.position.set(-11, 0, -1);
-    model.rotation.y = Math.PI / 2;
-    scene.add(model);
-model.traverse(child => {
-      if (child.isMesh) {
-        child.material.roughness = 1;
-    child.material.metalness = 0;
-      }
-    });  }
-);
+// loader.load(
+//   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
+//   function (gltf) {
+//     const model = borodkin1 = gltf.scene;
+//     assignUserData(model, 'ground');
+//     model.position.set(-11, 0, -1);
+//     model.rotation.y = Math.PI / 2;
+//     scene.add(model);
+// model.traverse(child => {
+//       if (child.isMesh) {
+//         child.material.roughness = 1;
+//     child.material.metalness = 0;
+//       }
+//     });  }
+// );
 
-loader.load(
-  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
-  function (gltf) {
-    const model = borodkin1 = gltf.scene;
-    assignUserData(model, 'ground');
-    model.position.set(5, 0, 2);
-    model.rotation.y = Math.PI / 2;
-    scene.add(model);
-model.traverse(child => {
-      if (child.isMesh) {
-        child.material.roughness = 1;
-    child.material.metalness = 0;
-      }
-    });  }
-);
+// loader.load(
+//   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
+//   function (gltf) {
+//     const model = borodkin1 = gltf.scene;
+//     assignUserData(model, 'ground');
+//     model.position.set(5, 0, 2);
+//     model.rotation.y = Math.PI / 2;
+//     scene.add(model);
+// model.traverse(child => {
+//       if (child.isMesh) {
+//         child.material.roughness = 1;
+//     child.material.metalness = 0;
+//       }
+//     });  }
+// );
 
-loader.load(
-  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
-  function (gltf) {
-    const model = borodkin1 = gltf.scene;
-    assignUserData(model, 'ground');
-    model.position.set(8, 0, 2);
-    scene.add(model);
-model.traverse(child => {
-      if (child.isMesh) {
-        child.material.roughness = 1;
-    child.material.metalness = 0;
-      }
-    });  }
-);
+// loader.load(
+//   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest4.glb',
+//   function (gltf) {
+//     const model = borodkin1 = gltf.scene;
+//     assignUserData(model, 'ground');
+//     model.position.set(8, 0, 2);
+//     scene.add(model);
+// model.traverse(child => {
+//       if (child.isMesh) {
+//         child.material.roughness = 1;
+//     child.material.metalness = 0;
+//       }
+//     });  }
+// );
 
-loader.load(
-  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest5.glb',
-  function (gltf) {
-    const model = borodkin1 = gltf.scene;
-    assignUserData(model, 'ground');
-    model.position.set(11, 0, 1);
-    model.rotation.y = Math.PI / 2;
-    scene.add(model);
-model.traverse(child => {
-      if (child.isMesh) {
-        child.material.roughness = 1;
-    child.material.metalness = 0;
-      }
-    });  }
-);
+// loader.load(
+//   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest5.glb',
+//   function (gltf) {
+//     const model = borodkin1 = gltf.scene;
+//     assignUserData(model, 'ground');
+//     model.position.set(11, 0, 1);
+//     model.rotation.y = Math.PI / 2;
+//     scene.add(model);
+// model.traverse(child => {
+//       if (child.isMesh) {
+//         child.material.roughness = 1;
+//     child.material.metalness = 0;
+//       }
+//     });  }
+// );
 
-loader.load(
-  'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest5.glb',
-  function (gltf) {
-    const model = borodkin1 = gltf.scene;
-    assignUserData(model, 'ground');
-    model.position.set(-2, 0, -5);
-    model.rotation.y = Math.PI / 2;
-    scene.add(model);
-model.traverse(child => {
-      if (child.isMesh) {
-        child.material.roughness = 1;
-    child.material.metalness = 0;
-      }
-    });  }
-);
+// loader.load(
+//   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/forest5.glb',
+//   function (gltf) {
+//     const model = borodkin1 = gltf.scene;
+//     assignUserData(model, 'ground');
+//     model.position.set(-2, 0, -5);
+//     model.rotation.y = Math.PI / 2;
+//     scene.add(model);
+// model.traverse(child => {
+//       if (child.isMesh) {
+//         child.material.roughness = 1;
+//     child.material.metalness = 0;
+//       }
+//     });  }
+// );
 
 loader.load(
   'https://cdn.jsdelivr.net/gh/krafalskaya/eniseisk-3d@main/borodkin1.glb',
