@@ -53,7 +53,7 @@ camera.lookAt(0, 0, 0);
 
     // Добавляем свет
     // Мягкий рассеянный свет
-const ambientLight = new THREE.AmbientLight(0xfff4e6, 0.6); // тёплый и не слишком яркий
+const ambientLight = new THREE.AmbientLight(0xfff4e6, 0.8); // тёплый и не слишком яркий
 scene.add(ambientLight);
 
 // Направленный "солнечный" свет
